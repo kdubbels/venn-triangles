@@ -1,0 +1,63 @@
+<html>
+<head>
+    <title>Venn Triangle</title>
+
+
+<style>
+ #canvas {
+                height: 630px;
+                width: 500px;
+            
+}
+</style>
+
+<script src="raphael-min.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+window.onload = function () {
+
+var paper = Raphael("canvas",1000, 1000);
+
+var t1 = paper.path("M 200 100 L 100 300 L 300 300z")
+	.attr({
+    "fill": "#bf2f2f",
+    "opacity": 0.5,
+    "stroke": "white",
+});
+
+
+var t2 = paper.path("M 300 100 L 200 300 L 400 300z")
+	.attr({
+    "fill": "#bf852f",
+    "opacity": 0.5,
+    "stroke": "white",
+});
+
+var b1 = paper.path("M 200 510 L 100 310 L 300 310z")
+	.attr({
+    "fill": "#a2bf2f",
+    "opacity": 0.5,
+    "stroke": "white",
+});
+
+var b2 = paper.path("M 300 510 L 200 310 L 400 310z")
+	.attr({
+    "fill": "#2f69bf",
+    "opacity": 0.5,
+    "stroke": "white",
+});
+
+
+
+
+}
+
+</script>
+    </head>
+<body>
+
+<div id="canvas">
+</div>
+
+</body>
+</html>

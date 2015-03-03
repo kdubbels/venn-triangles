@@ -1,0 +1,153 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Raphaël · Australia</title>
+        <style type="text/css" media="screen">
+            #canvas {
+                height: 300px;
+                left: 50%;
+                margin: -150px 0 0 -300px;
+                position: absolute;
+                top: 50%;
+                width: 600px;
+            }
+            #paper {
+                height: 300px;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 300px;
+            }
+            #one, #two, #three, #four, #five, #six{
+                display: none;
+                height: 400px;
+                overflow: auto;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 300px;
+            }
+            h2 {
+                text-align: center;
+            }
+        </style>
+        <script src="raphael-min.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" charset="utf-8">
+        window.onload = function () {
+            var R = Raphael("paper", 1200, 1200);
+            var attr = {
+                fill: "#FFFFFF",
+                stroke: "#666",
+                "opacity": .5,
+                "stroke-width": 1,
+                "stroke-linejoin": "round"
+            };
+            var tri = {};
+            tri.one = R.path("M 100 50 L 50 150 L 150 150z").attr(attr);
+            tri.two = R.path("M 150 50 L 100 150 L 200 150z").attr(attr);
+            tri.three = R.path("M 100 260 L 50 155 L 150 155z").attr(attr);
+            tri.four = R.path("M 150 260 L 100 155 L 200 155z").attr(attr);
+            
+            tri.five = R.path("M 125 100 L 150 150 L 100 150z").attr(attr);
+            
+            tri.six = R.path("M 125 205 L 150 155 L 100 155z").attr(attr);
+
+
+
+            var current = null;
+            for (var state in tri) {
+                tri[state].color = Raphael.getColor();
+                (function (st, state) {
+                    st[0].onmouseover = function () {
+                        current && tri[current].animate({fill: "#FFFFFF", stroke: "#666"}, 500) && (document.getElementById(current).style.display = "");
+                        st.animate({fill: st.color, stroke: "#ccc"}, 500);
+                        //st.toFront();
+                        R.safari();
+                        document.getElementById(state).style.display = "block";
+                        current = state;
+                    };
+                    st[0].onmouseout = function () {
+                        st.animate({fill: "#FFFFFF", stroke: "#666"}, 500);
+                        //st.toFront();
+                        R.safari();
+                    };
+                    if (state == "one") {
+                        st[0].onmouseover();
+                    }
+                })(tri[state], state);
+            }
+        };
+        </script>
+    </head>
+    <body>
+        <div id="canvas">
+            <div id="paper"></div>
+            <div id="one">
+                <h2>New South Wales</h2>
+                <p>
+                    New South Wales (abbreviated as NSW) is Australia’s oldest and most populous state, located in the south-east of the
+                    country, north of Victoria and south of Queensland. It was founded in 1788 and originally comprised much of the
+                    Australian mainland, as well as Lord Howe Island and Norfolk Island. New Zealand was not initially part of the colony,
+                    although when Britain annexed New Zealand in 1840 it was briefly a part of New South Wales. During the 19th century
+                    large areas were successively separated to form the British colonies of Tasmania, South Australia, Victoria,
+                    Queensland, and New Zealand.
+                </p>
+            </div>
+            <div id="two">
+                <h2>Victoria</h2>
+                <p>
+                    Victoria is a state located in the south-eastern corner of Australia. It is the smallest mainland state in area but
+                    the most densely populated and urbanised. Prior to European settlement, some 30,000 Indigenous Australians lived in
+                    the area now occupied by the state. By contrast, over five million people now inhabit the region. European settlement
+                    in Victoria began in the 1830s as a farming community. Victoria is the second most populous Australian state, after New South Wales, with
+                    an estimated population of 5,205,200 as of June 2007. Melbourne is Victoria’s capital and largest city, with more
+                    than 70% of all Victorians living there.
+                </p>
+            </div>
+            <div id="three">
+                <h2>Western Australia</h2>
+                <p>
+                    Western Australia is a state occupying the entire western third of the Australian continent. The nation’s largest
+                    state and the second largest sub-national entity in the world, it has 2.1 million inhabitants (10% of the national
+                    total), 85% of whom live in the south-west corner of the state. The people of Western Australia are often
+                    colloquially referred to as sand-gropers, the common name of an insect found on sand dunes around Perth.
+                </p>
+            </div>
+            <div id="four">
+                <h2>South Australia</h2>
+                <p>
+                    South Australia is a state of Australia in the southern central part of the country. It covers some of the most arid
+                    parts of the continent; with a total land area of 983,482 square kilometres, it is the fourth largest
+                    of Australia’s six states and two territories. It is bordered to the west by Western Australia, to the north by the
+                    Northern Territory and Queensland, to the east by Queensland, New South Wales and Victoria, and along the south by
+                    the Great Australian Bight and the Southern Ocean. With nearly 1.6 million people, the state comprises less than
+                    10% of the Australian population and ranks fifth in population among the states and territories.
+                </p>
+            </div>
+            <div id="five">
+                <h2>South Australia</h2>
+                <p>
+                    South Australia is a state of Australia in the southern central part of the country. It covers some of the most arid
+                    parts of the continent; with a total land area of 983,482 square kilometres, it is the fourth largest
+                    of Australia’s six states and two territories. It is bordered to the west by Western Australia, to the north by the
+                    Northern Territory and Queensland, to the east by Queensland, New South Wales and Victoria, and along the south by
+                    the Great Australian Bight and the Southern Ocean. With nearly 1.6 million people, the state comprises less than
+                    10% of the Australian population and ranks fifth in population among the states and territories.
+                </p>
+            </div>
+                        <div id="six">
+                <h2>South Australia</h2>
+                <p>
+                    South Australia is a state of Australia in the southern central part of the country. It covers some of the most arid
+                    parts of the continent; with a total land area of 983,482 square kilometres, it is the fourth largest
+                    of Australia’s six states and two territories. It is bordered to the west by Western Australia, to the north by the
+                    Northern Territory and Queensland, to the east by Queensland, New South Wales and Victoria, and along the south by
+                    the Great Australian Bight and the Southern Ocean. With nearly 1.6 million people, the state comprises less than
+                    10% of the Australian population and ranks fifth in population among the states and territories.
+                </p>
+            </div>
+
+        </div>
+
+    </body>
+</html>
